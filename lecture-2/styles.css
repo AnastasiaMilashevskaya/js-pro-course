@@ -1,0 +1,21 @@
+.container {
+  border: 3px solid rgb(86, 197, 241);
+}
+
+.card {
+  background-color: rgb(255, 255, 255);
+}
+
+.info {
+  font-size: 18px;
+}
+
+.img {
+  height: 130px;
+  width: 130px;
+}
+
+.zoom {
+  height: 250px;
+  width: 250px;
+}
