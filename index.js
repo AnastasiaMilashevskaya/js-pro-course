@@ -30,7 +30,7 @@ let sum = array.reduce((prev, current) => prev + current);
 //№3
 //Напишите код, который добавит символ двоеточие(':') между нечетными числами. Например, число 556 результат должен быть '5:56', 566 -> 566, 655 -> 65:5
 
-function addColorOdd(number) {
+function addСolons(number) {
   if (isNaN(parseInt(number))) {
     alert("Введите число");
   } else {
@@ -45,7 +45,7 @@ function addColorOdd(number) {
     console.log(newArr.join(""));
   }
 }
-addColorOdd(prompt("Введите число"));
+addСolons(prompt("Введите число"));
 
 //№4
 //Создайте 2 массива с разной длинной. Необходимо написать код,который создаёт массив элементов представляющих собой разность соответствующих элементов заданных массивов.
