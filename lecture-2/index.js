@@ -114,6 +114,37 @@ let users = fetch("https://jsonplaceholder.typicode.com/users")
   })
   .then((value) => createCard(value));
 
+// 6
+// Сделать запрос при помощи fetch на адрес https://jsonplaceholder.typicode.com/users/${userId}/todos, userId получить при помощи prompt. Вывести todo list пользователя, отобразить текст тудушки и индикатор выполнена она или нет (чекбокс). Вывести в html внутри div с id = 2
+
+const todos = document.getElementById("2");
+
+function displayTodo(title, isCompleted) {
+  let todo = document.createElement("div");
+  todo.classList.add("todo");
+  let todoTitle = document.createElement("p");
+  let todoCheckbox = document.createElement("input");
+  todoCheckbox.type = "checkbox";
+  isCompleted ? todoCheckbox.setAttribute("checked", "") : "";
+  todoTitle.append(title);
+  todo.append(todoCheckbox, todoTitle);
+  todos.append(todo);
+}
+
+function renderTodoList() {
+  let userId = prompt("Введите userId");
+  fetch(`https://jsonplaceholder.typicode.com/users/${userId}/todos`)
+    .then((response) => response.json())
+    .then((result) => {
+      result.forEach((item) => {
+        let { title, completed } = item;
+        displayTodo(title, completed);
+      });
+    });
+}
+
+renderTodoList();
+
 // 7
 // Сделать запрос при помощи fetch на адрес https://jsonplaceholder.typicode.com/albums/1/photos, вывести фотографии, используя тег img. В качестве src для img использовать поле url в объекте фото
 
